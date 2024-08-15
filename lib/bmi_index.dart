@@ -17,7 +17,7 @@ class _BmiIndexState extends State<BmiIndex> {
   void calculate(){
     final double weight=double.parse(weightcontroller.text);
     final double height=double.parse(heightcontroller.text);
-    final double bmi = weight/height;
+    final double bmi = weight/(height*height);
      Navigator.push( context,
        MaterialPageRoute(
          builder: (context) => 
@@ -42,9 +42,11 @@ class _BmiIndexState extends State<BmiIndex> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
+              cursorColor: Colors.purple,
               controller: weightcontroller,
               decoration: InputDecoration(
-                hintText: 'your weight in kg',
+                prefixIcon:const Icon(Icons.fitness_center),
+                labelText: 'weight(kg)',
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),
@@ -58,9 +60,11 @@ class _BmiIndexState extends State<BmiIndex> {
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: TextField(
+              cursorColor: Colors.purple,
               controller: heightcontroller,
               decoration: InputDecoration(
-                  hintText: 'your height in m',
+                prefixIcon:const Icon(Icons.height),
+                labelText: 'height(cm)',
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
