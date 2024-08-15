@@ -64,7 +64,7 @@ class _BmiIndexState extends State<BmiIndex> {
               controller: heightcontroller,
               decoration: InputDecoration(
                 prefixIcon:const Icon(Icons.height),
-                labelText: 'height(cm)',
+                labelText: 'height(m)',
                   enabledBorder: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(20),
                   ),
